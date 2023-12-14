@@ -1,0 +1,16 @@
+644285778
+2023-06-11
+06:13:54
+Hey,My name is Olivia.I am your  ChatBot and i will be helping you today with any technical supports.Select your  Electronic device  from the options.9:43
+9:43
+
+SmartPhone9:43
+Select your Smartphone OS from the options.9:43
+Android9:43
+Here are some common problems faced in android phones 9:43
+Overheating9:43
+OverheatingTo address overheating issues on your Android device, you can try the following solutions:9:43
+1.Remove the Case2.Avoid Direct Sunlight3.Close Unused Apps4.Reduce Display Brightness5.Disable Unused Connectivity Features6.Restrict Background Processes7.Avoid Resource-Intensive Tasks8.Clear Cached Data9.Update Apps and System Software10.Avoid Overcharging9:43
+If the above steps don't resolve the overheating issue, it's advisable to contact the device manufacturer's support or visit a professional technician for further assistance. Persistent overheating may indicate a hardware problem that requires specialized attention.9:43
+Have you found the solution?.9:43
+No9:43

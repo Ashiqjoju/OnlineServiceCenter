@@ -1,0 +1,242 @@
+<img id="chat-button" src="path/to/chat-icon.png" alt="Chat Icon">
+
+<div id="chat-container">
+  <div id="chat-header">
+    <h2>Support Chat</h2>
+    <button id="chat-close-button">&times;</button>
+  </div>
+  <div id="chat-messages">
+    <div class="chat-message received">
+      <span>Hi, how can I help you?</span>
+    </div>
+    <div class="chat-message sent">
+      <span>I have a question about your products.</span>
+    </div>
+    <!-- Additional chat messages -->
+  </div>
+  <div id="chat-input-container">
+    <input type="text" id="chat-input" placeholder="Type your message..." />
+    <button id="chat-send-button">Send</button>
+  </div>
+</div>
+<style>
+  #chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 300px;
+    height: 420px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 9999;
+    display: none;
+  }
+  
+  #chat-header {
+    background-color: #555;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #chat-header h2 {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  #chat-close-button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  #chat-messages {
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+  }
+  
+  .chat-message {
+    margin-bottom: 8px;
+  }
+  
+  .chat-message.received {
+    background-color: #fff;
+    color: #000;
+    padding: 8px;
+    border-radius: 5px;
+  }
+  
+  .chat-message.sent {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: right;
+  }
+  
+  #chat-input-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  #chat-input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+  
+  #chat-send-button {
+    background-color: #4CAF50;
+    border: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  #chat-send-button:hover {
+    background-color: #45a049;
+  }
+</style>
+<script>
+  document.getElementById("chat-button").addEventListener("click", function() {
+    document.getElementById("chat-container").style.display = "block";
+  });
+
+  document.getElementById("chat-close-button").addEventListener("click", function() {
+    document.getElementById("chat-container").style.display = "none";
+  });
+
+  document.getElementById("chat-send-button").addEventListener("click", function() {
+    sendMessage();
+  });
+
+  document.getElementById("chat-input").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      sendMessage();
+    }
+  });
+
+  function sendMessage() {
+    var messageInput = document.getElementById("chat-input");
+    var message = messageInput.value.trim();
+
+    if (message !== "") {
+      var chatMessages = document.getElementById("chat-messages");
+      var messageContainer = document.createElement("div");
+      var messageElement = document.createElement("span");
+
+      messageContainer.className = "chat-message sent";
+      messageElement.textContent = message;
+      messageContainer.appendChild(messageElement);
+      chatMessages.appendChild(messageContainer);
+
+      messageInput.value = "";
+
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+
+      // Send the user message to the chatbot for processing
+      sendToChatbot(message);
+    }
+  }
+
+  function sendToChatbot(message) {
+    var chatMessages = document.getElementById("chat-messages");
+    var messageContainer = document.createElement("div");
+    var messageElement = document.createElement("span");
+
+    messageContainer.className = "chat-message received";
+    messageElement.textContent = getChatbotResponse(message);
+    messageContainer.appendChild(messageElement);
+    chatMessages.appendChild(messageContainer);
+
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+  function getChatbotResponse(message) {
+    // Convert the user's message to lowercase for easier processing
+    message = message.toLowerCase();
+  
+    // TV Related Solutions
+    if (message.includes("tv")) {
+      if (message.includes("no power")) {
+        return "Make sure the power cable is securely connected and try plugging it into a different outlet. If the issue persists, it may require professional repair.";
+      } else if (message.includes("no display")) {
+        return "Check the connections between the TV and the video source (e.g., cable box, gaming console). Ensure the correct input source is selected on the TV. If the problem continues, there might be a hardware issue.";
+      } else if (message.includes("distorted picture")) {
+        return "Try adjusting the picture settings on your TV. If the issue persists, it may be caused by a faulty cable or a problem with the TV's hardware.";
+      } else if (message.includes("setup")) {
+        return "Refer to the user manual for step-by-step instructions on setting up your TV. If you need further assistance, feel free to ask.";
+      } else if (message.includes("remote control")) {
+        return "Make sure the batteries in the remote control are not depleted. If necessary, replace them. You can also try reprogramming the remote control by following the instructions in the user manual.";
+      } else if (message.includes("software updates")) {
+        return "Check the manufacturer's website for any available software updates for your TV model. Follow the provided instructions to install the updates.";
+      } else if (message.includes("audio issues")) {
+        return "Ensure that the volume is not muted and that the audio cables are connected properly. You can also try adjusting the sound settings on your TV.";
+      } else if (message.includes("internet connectivity")) {
+        return "Check the network settings on your TV and ensure it is properly connected to your Wi-Fi network. If the issue persists, try restarting your router and TV.";
+      } else if (message.includes("warranty")) {
+        return "Please provide your TV's model and serial number, and our customer support team will assist you with warranty-related inquiries.";
+      } else {
+        return "I apologize, but I'm unable to assist with that specific TV query. Please provide more details or contact our support team for further assistance.";
+      }
+    }
+  
+    // Phone Related Solutions
+    if (message.includes("phone") || message.includes("smartphone")) {
+      if (message.includes("setup")) {
+        return "Refer to the user manual or the manufacturer's website for step-by-step instructions on setting up your phone. If you have any specific questions, feel free to ask.";
+      } else if (message.includes("activation")) {
+        return "Contact your service provider or follow the activation instructions provided by your carrier.";
+      } else if (message.includes("connectivity issues")) {
+        return "Try turning your phone's Wi-Fi or mobile data off and on again. If the issue persists, check your network settings or contact your service provider.";
+      } else if (message.includes("app crashes")) {
+        return "Close the app and try opening it again. If the problem continues, check for any available app updates or reinstall the app.";
+      } else if (message.includes("software updates")) {
+        return "Go to your phone's settings and look for the software update section. If an update is available, follow the on-screen instructions to install it.";
+      } else if (message.includes("battery life")) {
+        return "To improve battery life, you can try reducing screen brightness, disabling unnecessary background apps, or enabling power-saving mode.";
+      } else if (message.includes("screen replacement")) {
+        return "For screen replacement, it's best to visit an authorized service center or contact the phone manufacturer for professional assistance.";
+      } else if (message.includes("water damage")) {
+        return "If your phone has suffered water damage, immediately turn it off and remove the battery (if possible). Place the phone in a bag of uncooked rice or silica gel packets to absorb moisture, and contact a service center for repair options.";
+      } else {
+        return "I apologize, but I'm unable to assist with that specific phone query. Please provide more details or contact our support team for further assistance.";
+      }
+    }
+  
+    // Computer Related Solutions
+    if (message.includes("computer") || message.includes("pc")) {
+      if (message.includes("slow performance")) {
+        return "Try closing any unnecessary programs and freeing up disk space. You can also run a disk cleanup or consider upgrading your computer's hardware if it's outdated.";
+      } else if (message.includes("virus")) {
+        return "Run a full system scan using a reliable antivirus software. Make sure your antivirus definitions are up to date.";
+      } else if (message.includes("blue screen")) {
+        return "A blue screen error usually indicates a hardware or driver issue. Try updating your drivers or contact a technician for further assistance.";
+      } else if (message.includes("software installation")) {
+        return "To install software, download the installer from a trusted source or insert the installation media (CD/DVD) and follow the on-screen instructions.";
+      } else if (message.includes("hardware upgrade")) {
+        return "For hardware upgrades, it's recommended to consult with a technician or visit a computer service center to ensure compatibility and proper installation.";
+      } else if (message.includes("data recovery")) {
+        return "If you need to recover lost data, it's best to stop using the affected drive and consult with a data recovery specialist or software.";
+      } else {
+        return "I apologize, but I'm unable to assist with that specific computer query. Please provide more details or contact our support team for further assistance.";
+      }
+    }
+  
+    // Default response for queries not related to TVs, phones, or computers
+    return "I'm sorry, I don't have the information you're looking for. Could you please provide more details?";
+  }
+  
+  
+</script>

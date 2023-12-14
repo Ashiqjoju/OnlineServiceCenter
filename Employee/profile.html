@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Time Greeting</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    .container {
+      text-align: center;
+    }
+    
+    h1 {
+      font-size: 48px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="greeting"></h1>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var greetingElement = document.getElementById("greeting");
+      var currentDate = new Date();
+      var currentHour = currentDate.getHours();
+      var greetingText = "";
+
+      if (currentHour >= 0 && currentHour < 5) {
+        greetingText = "Midnight";
+      } else if (currentHour >= 5 && currentHour < 12) {
+        greetingText = "Good Morning";
+      } else if (currentHour >= 12 && currentHour < 17) {
+        greetingText = "Good Afternoon";
+      } else if (currentHour >= 17 && currentHour < 21) {
+        greetingText = "Good Evening";
+      } else {
+        greetingText = "Good Night";
+      }
+
+      greetingElement.textContent = greetingText;
+    });
+  </script>
+</body>
+</html>

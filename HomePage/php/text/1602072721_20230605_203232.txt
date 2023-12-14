@@ -1,0 +1,17 @@
+1602072721
+2023-06-05
+20:32:32
+Hey,My name is Yara.I am your  ChatBot and i will be helping you today with any technical supports.Select your  Electronic device  from the options.0:1
+0:1
+
+SmartPhone0:1
+Select your Smartphone OS from the options.0:1
+Android0:1
+Here are some common problems faced in android phones 0:1
+Battery Drain0:2
+0:2
+Battery Drain Here are some steps you can take to help solve battery drain problems on your Android device: 0:2
+1.Check Battery Usage2.Optimize Battery Settings3.Disable Unnecessary Features4.Reduce Screen Brightness and Timeou5.Limit Background Data and Sync6.Disable or Manage Notifications7.Update Apps and OS8.Use Battery Saver Mode9.Disable or Uninstall Problematic Apps10.Reset App Preferences0:2
+If you've tried these steps and are still experiencing significant battery drain, it's worth considering factors such as the age of your device, the health of the battery, or seeking assistance from the device manufacturer or a professional technician.0:2
+Have you found the solotion?.0:2
+No0:2

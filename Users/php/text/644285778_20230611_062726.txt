@@ -1,0 +1,17 @@
+644285778
+2023-06-11
+06:27:26
+Hey,My name is Uma.I am your  ChatBot and i will be helping you today with any technical supports.Select your  Electronic device  from the options.9:56
+9:56
+
+Computer9:57
+9:57
+Choose a computer type:9:57
+Laptop9:57
+To address overheating in your laptop, try the following:
+
+- Clean the laptop's cooling vents using compressed air to remove dust and debris. Ensure proper airflow around the laptop.
+- Use a laptop cooling pad to improve ventilation and dissipate heat more effectively.
+- Avoid using the laptop on soft surfaces like beds or sofas, as they can obstruct airflow and contribute to overheating.9:57
+Have you found the solution?.9:57
+No9:57

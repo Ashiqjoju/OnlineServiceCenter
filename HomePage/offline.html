@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page with Icons</title>
+  <link rel="stylesheet" href="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.css">
+  <style>
+    /* Center align the icons */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    /* Style the container */
+    .container {
+      text-align: center;
+    }
+    
+    /* Style the icons */
+    .icon-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    
+    .icon-container ion-icon {
+      font-size: 24px;
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+    
+    /* Style the status messages */
+    .status {
+      font-size: 14px;
+    }
+    
+    /* Style the button */
+    .check-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      background-color: dodgerblue;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <button class="check-button" onclick="showIcons()">Check My Phone</button>
+    
+    <div id="icons-container" style="display: none;">
+      <div class="icon-container">
+        <ion-icon name="wifi-outline" data-name="Wi-Fi"></ion-icon>
+        <span class="status">Checking Wi-Fi...</span>
+      </div>
+    
+      <div class="icon-container">
+        <ion-icon name="bluetooth-outline" data-name="Bluetooth"></ion-icon>
+        <span class="status">Checking Bluetooth...</span>
+      </div>
+    
+      <div class="icon-container">
+        <ion-icon name="battery-charging-outline" data-name="Battery"></ion-icon>
+        <span class="status">Checking Battery...</span>
+      </div>
+    
+      <div class="icon-container">
+        <ion-icon name="camera-outline" data-name="Camera"></ion-icon>
+        <span class="status">Checking Camera...</span>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function showIcons() {
+      const button = document.querySelector('.check-button');
+      button.style.display = 'none';
+      
+      const iconsContainer = document.getElementById('icons-container');
+      iconsContainer.style.display = 'block';
+      
+      const icons = document.getElementsByClassName('icon-container');
+      const statuses = document.querySelectorAll('.status');
+      let currentIcon = 0;
+      
+      function showIconContainer() {
+        icons[currentIcon].style.opacity = 1;
+        
+        const currentIconName = icons[currentIcon].querySelector('ion-icon').getAttribute('data-name');
+        statuses[currentIcon].textContent = `Checking ${currentIconName}...`;
+        icons[currentIcon].style.backgroundColor = 'yellow';
+        
+        setTimeout(() => {
+          statuses[currentIcon].textContent = `${currentIconName} Checked`;
+          icons[currentIcon].style.backgroundColor = 'green';
+          icons[currentIcon].style.color = 'white';
+          
+          currentIcon++;
+          if (currentIcon < icons.length) {
+            showIconContainer();
+          }
+        }, 5000);
+      }
+      
+      showIconContainer();
+    }
+  </script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

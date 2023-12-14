@@ -1,0 +1,18 @@
+644285778
+2023-06-09
+09:47:35
+Hey,My name is Ryan.I am your  ChatBot and i will be helping you today with any technical supports.Select your  Electronic device  from the options.13:15
+13:15
+
+Computer13:16
+13:16
+Choose a computer type:13:16
+Laptop13:16
+If your laptop is not charging, follow these steps to troubleshoot the issue:
+
+- Check the power adapter and charging cable for any damage. Look for frayed wires or bent connectors. If you find any issues, consider replacing them.
+- Try plugging your laptop into a different power outlet to ensure the problem is not with the outlet itself.
+- Reset the battery if possible. Some laptops have a battery reset function that can help resolve charging issues.13:16
+Have you found the solotion?.13:16
+No13:17
+13:17

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Center Home Page</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <style>
+    /* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+.sub-header {
+  background-color: #f4f4f4;
+  padding: 20px;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-content {
+  flex: 1;
+}
+
+.right-icons ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.right-icons ul li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.right-icons ul li:first-child {
+  margin-left: 0;
+}
+
+.right-icons ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Background Header */
+.background-header {
+  background-color: #333;
+  padding: 20px;
+  color: #fff;
+}
+
+.header-area {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+  }
+  
+  .nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Align the nav items to the right */
+  }
+  
+.nav li {
+  margin-left: 20px;
+}
+
+.logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 800;
+  margin-right: 20px;
+}
+
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav li {
+  margin-left: 20px;
+}
+
+.nav li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nav li a:hover {
+  text-decoration: underline;
+}
+
+/* Services */
+.section-heading {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.services {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.service-item {
+  text-align: center;
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.service-item img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.service-item h3 {
+  margin-top: 0;
+}
+
+.main-button-red a {
+  color: #fff;
+  background-color: #0575E6;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+
+
+.customer-name {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Contact Us */
+.section-contact {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.contact-form input[type="submit"] {
+  color: #fff;
+  background-color: #0575E6;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+/* Chat Box */
+.chat-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.chat-box img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+  a .active  {
+    color: #0575E6;
+  }
+  
+/* Computer Repair Page */
+.computer-repair {
+    background-color: #f4f4f4;
+    padding: 40px 0;
+  }
+  
+  .computer-repair-heading {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .computer-repair-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .computer-repair-info {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .computer-repair-info img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+   
+  }
+
+  
+  .computer-repair-details {
+    flex: 1;
+    margin-left: 40px;
+  }
+  
+  .computer-repair-details h2 {
+    margin-top: 0;
+  }
+  
+  .computer-repair-details p {
+    margin-bottom: 20px;
+  }
+  
+  .computer-repair-details .main-button-red a {
+    margin-top: 10px;
+  }
+  
+</style>
+</head>
+
+<body>
+  <header class="sub-header">
+    <div class="left-content">
+      <p>Welcome to our service center. We provide quality services for your devices.</p>
+    </div>
+    <div class="right-icons">
+      <ul>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="background-header">
+    <div class="header-area">
+        <div class="logo">Service Center</div>
+      <nav class="main-nav clearfix">
+        
+        <div class="menu-trigger"></div>
+        <ul class="nav">
+            <li><a href="index.html" >Home</a></li>
+            <li><a href="computer.html">Computers</a></li>
+            <li><a href="smartphone.html" style="color:#0575E6">Smartphones</a></li>
+            <li><a href="telivison.html" >TVs</a></li>
+            <li><a href="#">Downloads</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <section class="computer-repair">
+    <div class="computer-repair-heading">
+        <h2>Smartphone Repair</h2>
+        <p>We offer professional smartphone repair services for various brands and models.</p>
+      </div>
+
+    <div class="computer-repair-content">
+      <div class="computer-repair-info">
+        <img src="mobile_img.png" alt="Computer Repair">
+        <div class="computer-repair-details">
+          <h2>Expert Smartphone Repair Services</h2>
+          <p>Our skilled technicians can diagnose and fix issues with your smartphone, including cracked screens, battery problems, charging port issues, and more. We use high-quality parts for repairs to ensure optimal performance.</p>
+          <p>Contact us today to schedule a smartphone repair!</p>
+          <div class="main-button-red"><a href="#">Contact Us</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2023 Service Center. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+
+</html>

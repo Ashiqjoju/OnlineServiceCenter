@@ -1,0 +1,43 @@
+.sendBar{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background-color: #333;
+}
+.sendBar svg{
+    margin: auto;
+    height: 40%;
+    min-height: 40%;
+    color: #000;
+
+}
+.sendBar input[type='text']{
+    margin: auto;
+    margin: 5px;
+    border-radius: 10px;
+    padding: 10px;
+    float: left;
+    width: 80%;
+    height: 100%;
+    color: #fff;
+    outline-color: transparent;
+    accent-color: transparent;
+    background-color:#333 ;
+    outline: none;
+    border-color: transparent;
+}
+
+
+::placeholder { 
+    color: #8696a0;
+    opacity: 1; 
+  }
+  
+  :-ms-input-placeholder { 
+    color: #8696a0;
+  }
+  
+  ::-ms-input-placeholder { 
+    color: #8696a0;
+  }

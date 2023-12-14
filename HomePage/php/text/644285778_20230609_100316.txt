@@ -1,0 +1,18 @@
+644285778
+2023-06-09
+10:03:16
+Hey,My name is David.I am your  ChatBot and i will be helping you today with any technical supports.Select your  Electronic device  from the options.13:32
+13:32
+
+Computer13:32
+Choose a computer type:13:32
+Desktop13:32
+If your desktop computer is not displaying anything on the monitor, follow these steps:
+
+- Check the connections between the monitor and the desktop. Ensure the cables are securely plugged in at both ends.
+- Test with a different monitor or cable to rule out any issues with the current ones.
+- Reset the BIOS settings to default. This can be done by accessing the BIOS menu during startup and choosing the appropriate option.
+- Check the graphics card to ensure it is seated properly and functioning correctly.13:32
+Have you found the solotion?.13:32
+No13:33
+13:33

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <style>
+  /* Global Styles */
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header */
+  .sub-header {
+    background-color: #f4f4f4;
+    padding: 20px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .left-content {
+    flex: 1;
+  }
+  
+  .right-icons ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .right-icons ul li {
+    display: inline-block;
+    margin-left: 10px;
+  }
+  
+  .right-icons ul li:first-child {
+    margin-left: 0;
+  }
+  
+  .right-icons ul li a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  /* Background Header */
+  .background-header {
+    background-color: #333;
+    padding: 20px;
+    color: #fff;
+  }
+  
+  .header-area {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+  
+  .main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
+  }
+  
+  .nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* Align the nav items to the right */
+  }
+  
+  
+  .nav li {
+    margin-left: 20px;
+  }
+  
+  .logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 800;
+    margin-right: 20px;
+  }
+  
+  .nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav li {
+    margin-left: 20px;
+  }
+  
+  .nav li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .nav li a:hover {
+    text-decoration: underline;
+  }
+    /* Computer Repair Page styles */
+    .computer-repair {
+      background-color: #f4f4f4;
+      padding: 40px 0;
+    }
+
+    .computer-repair-heading {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .computer-repair-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .computer-repair-info {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .computer-repair-info img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+    }
+
+    .computer-repair-details {
+      flex: 1;
+      margin-left: 40px;
+    }
+
+    .computer-repair-details h2 {
+      margin-top: 0;
+    }
+
+    .computer-repair-details p {
+      margin-bottom: 20px;
+    }
+
+    .computer-repair-details .main-button-red a {
+      margin-top: 10px;
+    }
+
+    /* Developers Section styles */
+    .developers-section {
+      background-color: #f4f4f4;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .developer {
+      display: inline-block;
+      max-width: 300px;
+      margin: 20px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 4px;
+    }
+
+    .developer img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .developer .developer-name {
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    /* Footer styles */
+    .footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    #map {
+        width: 20%;
+        height: 150px;
+        border-radius: 20px;
+        background-position: center center;
+        transition: all 0.3s ease;
+        box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+      }
+
+      #map:hover {
+        width: 50%;
+        height: 350px;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+      }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="sub-header">
+    <div class="left-content">
+      <p>Welcome to our service center. We provide quality services for your devices.</p>
+    </div>
+    <div class="right-icons">
+      <ul>
+        <li><a href="0575E6">Login</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <div class="background-header">
+    <div class="header-area">
+        <div class="logo">Service Center</div>
+      <nav class="main-nav clearfix">
+       
+        <div class="menu-trigger"></div>
+        <ul class="nav">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="computer.html">Computers</a></li>
+            <li><a href="smartphone.html">Smartphones</a></li>
+            <li><a href="telivison.html" >TVs</a></li>
+            <li><a href="#">Downloads</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- About Us Section -->
+  <section class="developers-section">
+    <h2>About Us</h2>
+    <p>
+      Service Center is a trusted service provider for various electronic devices. We specialize in repairing computers,
+      smartphones, and TVs. Our team of skilled technicians ensures high-quality repairs using genuine parts and
+      industry-standard practices.
+    </p>
+    <p>
+      Our commitment to customer satisfaction and reliable services sets us apart. We strive to deliver exceptional
+      results and provide a seamless experience for our clients. Contact us today to get your devices repaired
+      professionally.
+    </p>
+
+    <h2>Our Team</h2>
+    <div class="developer">
+      <img src="developer1.jpg" alt="Developer 1">
+      <h3 class="developer-name">Ashik Joju</h3>
+      <p>Software Engineer</p>
+    </div>
+    <div class="developer">
+      <img src="developer2.jpg" alt="Developer 2">
+      <h3 class="developer-name">Aravind R</h3>
+      <p>Web Developer</p>
+    </div>
+    <div class="developer">
+      <img src="developer3.jpg" alt="Developer 3">
+      <h3 class="developer-name">Shamnad CP</h3>
+      <p>UI/UX Designer</p>
+    </div>
+
+    <h2>Location</h2>
+   
+    <p>
+        
+      112 Kennedy,
+      <br>
+      Kothamangalam, Ernakulam,
+      <br>
+      kerala, 686666
+    </p>
+
+    <img  id="map" src="map.png" alt="Map Image">
+  </section>
+
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2023 Service Center. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

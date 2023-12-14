@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Center Home Page</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <style>
+    /* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+.sub-header {
+  background-color: #f4f4f4;
+  padding: 20px;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-content {
+  flex: 1;
+}
+
+.right-icons ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.right-icons ul li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.right-icons ul li:first-child {
+  margin-left: 0;
+}
+
+.right-icons ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Background Header */
+.background-header {
+  background-color: #333;
+  padding: 20px;
+  color: #fff;
+}
+
+.header-area {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end; /* Align the nav items to the right */
+}
+
+
+.nav li {
+  margin-left: 20px;
+}
+
+.logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 800;
+  margin-right: 20px;
+}
+
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav li {
+  margin-left: 20px;
+}
+
+.nav li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nav li a:hover {
+  text-decoration: underline;
+}
+
+/* Services */
+.section-heading {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.services {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.service-item {
+  text-align: center;
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f4f4f4;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.service-item img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.service-item h3 {
+  margin-top: 0;
+}
+
+.main-button-red a {
+  color: #fff;
+  background-color: #0575E6;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+/* Testimonials */
+.section-testimonials {
+  background-color: #f4f4f4;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.testimonial {
+  display: inline-block;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.testimonial img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.customer-name {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Contact Us */
+.section-contact {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.contact-form input[type="submit"] {
+  color: #fff;
+  background-color: #0575E6;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+/* Chat Box */
+.chat-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.chat-box img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+  .sub-menu {
+    display: none;
+  }
+
+  .active .sub-menu {
+    display: block;
+  }
+
+  #chat-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    height: 430px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 9999;
+    display: none;
+  }
+  
+  #chat-header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #chat-header h2 {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  #chat-close-button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  #chat-messages {
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+  }
+  
+  .chat-message {
+    margin-bottom: 8px;
+  }
+  
+  .chat-message.received {
+    background-color: #fff;
+    color: #000;
+    padding: 8px;
+    border-radius: 5px;
+  }
+  
+  .chat-message.sent {
+    background-color: #0575E6;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    text-align: right;
+  }
+  
+  #chat-input-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  #chat-input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+  
+  #chat-send-button {
+    background-color: #0575E6;
+    border: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  #chat-send-button:hover {
+    background-color: #0575E6;
+  }
+</style>
+
+
+</head>
+
+<body>
+  <header class="sub-header">
+    <div class="left-content">
+      <p>Welcome to our service center. We provide quality services for your devices.</p>
+    </div>
+    <div class="right-icons">
+      <ul>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="background-header">
+    <div class="header-area">
+      <div class="logo">Service Center</div>
+      <nav class="main-nav clearfix">
+        
+        <div class="menu-trigger"></div>
+        <ul class="nav">
+          <li><a href="index.html" style="color:#0575E6" >Home</a></li>
+            <li><a href="computer.html" >Computers</a></li>
+            <li><a href="smartphone.html">Smartphones</a></li>
+            <li><a href="telivison.html" >TVs</a></li>
+            <li><a href="#">Downloads</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <section class="section-heading">
+    <h2>Our Services</h2>
+  </section>
+
+  <section class="services">
+    <div class="service-item">
+      <img src="comp_img.png" alt="Service 1">
+      <h3>Computer Repair</h3>
+      <p>We offer comprehensive computer repair services to fix hardware and software issues.</p>
+      <div class="main-button-red"><a href="computer.html">Learn More</a></div>
+    </div>
+    <div class="service-item">
+      <img src="mobile_img.png" alt="Service 2">
+      <h3>Smartphone Repair</h3>
+      <p>Get your smartphone repaired by our expert technicians for all types of issues.</p>
+      <div class="main-button-red"><a href="smartphone.html">Learn More</a></div>
+    </div>
+    <div class="service-item">
+      <img src="tv_img.png" alt="Service 3">
+      <h3>TV Repair</h3>
+      <p>We specialize in TV repair services, including screen replacements and troubleshooting.</p>
+      <div class="main-button-red"><a href="telivison.html">Learn More</a></div>
+    </div>
+  </section>
+
+  <!-- Additional sections and content -->
+
+  <section class="section-testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial">
+      <img src="https://via.placeholder.com/100" alt="Customer 1">
+      <p>"Great service! My computer was repaired quickly and at a reasonable price."</p>
+      <p class="customer-name">John Doe</p>
+    </div>
+    <div class="testimonial">
+      <img src="https://via.placeholder.com/100" alt="Customer 2">
+      <p>"I had a cracked screen on my smartphone, and they fixed it perfectly. Highly recommended!"</p>
+      <p class="customer-name">Jane Smith</p>
+    </div>
+  </section>
+
+  <section class="section-contact">
+    <h2>Contact Us</h2>
+    <p>Feel free to reach out to us for any inquiries or to schedule an appointment.</p>
+    <div class="contact-form">
+      <form>
+        <input type="text" placeholder="Your Name">
+        <input type="email" placeholder="Your Email">
+        <textarea placeholder="Your Message"></textarea>
+        <input type="submit" value="Send Message">
+      </form>
+    </div>
+  </section>
+
+
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2023 Service Center. All rights reserved.</p>
+    </div>
+  </footer>
+
+<!-- 
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.css'> -->
+<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+
+<style>
+
+  #center-text {          
+    display: flex;
+    flex: 1;
+    flex-direction:column; 
+    justify-content: center;
+    align-items: center;  
+    height:100%;
+    
+  }
+  #chat-circle {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background: #0575E6;
+  
+    border-radius: 50%;
+    color: white;
+    padding: 28px;
+    cursor: pointer;
+    box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.6), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+  
+  .btn#my-btn {
+       background: white;
+      padding-top: 13px;
+      padding-bottom: 12px;
+      border-radius: 45px;
+      padding-right: 40px;
+      padding-left: 40px;
+      color: #0575E6;
+  }
+  #chat-overlay {
+      background: rgba(255,255,255,0.1);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      display: none;
+  }
+  
+  
+  .chat-box {
+    display:none;
+    background: #efefef;
+    position:fixed;
+    right:30px;
+    bottom:50px;  
+    width:350px;
+    max-width: 85vw;
+    max-height:100vh;
+    border-radius:5px;  
+
+
+  }
+  .chat-box-toggle {
+    float:right;
+    margin-right:15px;
+    cursor:pointer;
+  }
+  .chat-box-header {
+    background: #0575E6;
+    height:70px;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px; 
+    color:white;
+    text-align:center;
+    font-size:20px;
+    padding-top:17px;
+  }
+  .chat-box-body {
+    position: relative;  
+    height:370px;  
+    height:auto;
+    border:1px solid #ccc;  
+    overflow: hidden;
+  }
+  .chat-box-body:after {
+    content: "";
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTAgOCkiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGNpcmNsZSBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS4yNSIgY3g9IjE3NiIgY3k9IjEyIiByPSI0Ii8+PHBhdGggZD0iTTIwLjUuNWwyMyAxMW0tMjkgODRsLTMuNzkgMTAuMzc3TTI3LjAzNyAxMzEuNGw1Ljg5OCAyLjIwMy0zLjQ2IDUuOTQ3IDYuMDcyIDIuMzkyLTMuOTMzIDUuNzU4bTEyOC43MzMgMzUuMzdsLjY5My05LjMxNiAxMC4yOTIuMDUyLjQxNi05LjIyMiA5LjI3NC4zMzJNLjUgNDguNXM2LjEzMSA2LjQxMyA2Ljg0NyAxNC44MDVjLjcxNSA4LjM5My0yLjUyIDE0LjgwNi0yLjUyIDE0LjgwNk0xMjQuNTU1IDkwcy03LjQ0NCAwLTEzLjY3IDYuMTkyYy02LjIyNyA2LjE5Mi00LjgzOCAxMi4wMTItNC44MzggMTIuMDEybTIuMjQgNjguNjI2cy00LjAyNi05LjAyNS0xOC4xNDUtOS4wMjUtMTguMTQ1IDUuNy0xOC4xNDUgNS43IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS4yNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTg1LjcxNiAzNi4xNDZsNS4yNDMtOS41MjFoMTEuMDkzbDUuNDE2IDkuNTIxLTUuNDEgOS4xODVIOTAuOTUzbC01LjIzNy05LjE4NXptNjMuOTA5IDE1LjQ3OWgxMC43NXYxMC43NWgtMTAuNzV6IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS4yNSIvPjxjaXJjbGUgZmlsbD0iIzAwMCIgY3g9IjcxLjUiIGN5PSI3LjUiIHI9IjEuNSIvPjxjaXJjbGUgZmlsbD0iIzAwMCIgY3g9IjE3MC41IiBjeT0iOTUuNSIgcj0iMS41Ii8+PGNpcmNsZSBmaWxsPSIjMDAwIiBjeD0iODEuNSIgY3k9IjEzNC41IiByPSIxLjUiLz48Y2lyY2xlIGZpbGw9IiMwMDAiIGN4PSIxMy41IiBjeT0iMjMuNSIgcj0iMS41Ii8+PHBhdGggZmlsbD0iIzAwMCIgZD0iTTkzIDcxaDN2M2gtM3ptMzMgODRoM3YzaC0zem0tODUgMThoM3YzaC0zeiIvPjxwYXRoIGQ9Ik0zOS4zODQgNTEuMTIybDUuNzU4LTQuNDU0IDYuNDUzIDQuMjA1LTIuMjk0IDcuMzYzaC03Ljc5bC0yLjEyNy03LjExNHpNMTMwLjE5NSA0LjAzbDEzLjgzIDUuMDYyLTEwLjA5IDcuMDQ4LTMuNzQtMTIuMTF6bS04MyA5NWwxNC44MyA1LjQyOS0xMC44MiA3LjU1Ny00LjAxLTEyLjk4N3pNNS4yMTMgMTYxLjQ5NWwxMS4zMjggMjAuODk3TDIuMjY1IDE4MGwyLjk0OC0xOC41MDV6IiBzdHJva2U9IiMwMDAiIHN0cm9rZS13aWR0aD0iMS4yNSIvPjxwYXRoIGQ9Ik0xNDkuMDUgMTI3LjQ2OHMtLjUxIDIuMTgzLjk5NSAzLjM2NmMxLjU2IDEuMjI2IDguNjQyLTEuODk1IDMuOTY3LTcuNzg1LTIuMzY3LTIuNDc3LTYuNS0zLjIyNi05LjMzIDAtNS4yMDggNS45MzYgMCAxNy41MSAxMS42MSAxMy43MyAxMi40NTgtNi4yNTcgNS42MzMtMjEuNjU2LTUuMDczLTIyLjY1NC02LjYwMi0uNjA2LTE0LjA0MyAxLjc1Ni0xNi4xNTcgMTAuMjY4LTEuNzE4IDYuOTIgMS41ODQgMTcuMzg3IDEyLjQ1IDIwLjQ3NiAxMC44NjYgMy4wOSAxOS4zMzEtNC4zMSAxOS4zMzEtNC4zMSIgc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjEuMjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjwvZz48L3N2Zz4=');
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height:100%;
+    position: absolute;
+    z-index: -1;   
+  }
+  #chat-input {
+    background: #f4f7f9;
+    width:100%; 
+    position:relative;
+    height:47px;  
+    padding-top:10px;
+    padding-right:50px;
+    padding-bottom:10px;
+    padding-left:15px;
+    border:none;
+    resize:none;
+    outline:none;
+    border:1px solid #ccc;
+    color:#888;
+    border-top:none;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius:5px;
+    overflow:hidden;  
+  }
+  .chat-input > form {
+      margin-bottom: 0;
+  }
+  #chat-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #ccc;
+  }
+  #chat-input::-moz-placeholder { /* Firefox 19+ */
+    color: #ccc;
+  }
+  #chat-input:-ms-input-placeholder { /* IE 10+ */
+    color: #ccc;
+  }
+  #chat-input:-moz-placeholder { /* Firefox 18- */
+    color: #ccc;
+  }
+  .chat-submit {  
+    position:absolute;
+    bottom:3px;
+    right:10px;
+    background: transparent;
+    box-shadow:none;
+    border:none;
+    border-radius:50%;
+    color:#0575E6;
+    width:35px;
+    height:35px;  
+  }
+  .chat-logs {
+    padding:15px; 
+    height:370px;
+    overflow-y:scroll;
+  }
+  
+  @media only screen and (max-width: 500px) {
+     .chat-logs {
+          height:40vh;
+      }
+  }
+  
+  .chat-msg.user > .msg-avatar img {
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    float:left;
+    width:15%;
+  }
+  .chat-msg.self > .msg-avatar img {
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    float:right;
+    width:15%;
+  }
+  .cm-msg-text {
+    background:white;
+    padding:10px 15px 10px 15px;  
+    color:#666;
+    max-width:75%;
+    float:left;
+    margin-left:10px; 
+    position:relative;
+    margin-bottom:20px;
+    border-radius:30px;
+  }
+  .chat-msg {
+    clear:both;    
+  }
+  .chat-msg.self > .cm-msg-text {  
+    float:right;
+    margin-right:10px;
+    background: #0575E6;
+    color:white;
+  }
+  .cm-msg-button>ul>li {
+    list-style:none;
+    float:left;
+    width:50%;
+  }
+  .cm-msg-button {
+      clear: both;
+      margin-bottom: 70px;
+  }
+</style>
+
+
+<div id="chat-circle" class="btn btn-raised">
+        <div id="chat-overlay"></div>
+		    <i class="material-icons">message</i>
+
+	</div>
+  
+  <div class="chat-box">
+    <div class="chat-box-header">
+      ChatBot
+      <span class="chat-box-toggle"><i class="material-icons">close</i></span>
+      <span class="material-symbols-outlined">chat
+</span>
+    </div>
+    <div class="chat-box-body">
+      <div class="chat-box-overlay">   
+      </div>
+      <div class="chat-logs">
+       
+      </div><!--chat-log -->
+    </div>
+    <div class="chat-input">      
+      <form>
+        <input type="text" id="chat-input" placeholder="Send a message..."/>
+      <button type="submit" class="chat-submit" id="chat-submit"><i class="material-icons">send</i></button>
+      </form>      
+    </div>
+  </div>
+  
+  
+  
+  
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+<script>
+  $(function() {
+    var INDEX = 0;
+    $("#chat-submit").click(function(e) {
+      e.preventDefault();
+      var msg = $("#chat-input").val(); 
+      if(msg.trim() == ''){
+        return false;
+      }
+      generate_message(msg, 'self');
+      setTimeout(function() {      
+        generate_response(msg);  
+      }, 1000);
+    });
+  
+    function generate_response(msg) {
+      var response = '';
+  
+      // Check for keywords in the user's message
+      if (msg.includes('smartphone') || msg.includes('phone')) {
+        if (msg.includes('repair') || msg.includes('fix')) {
+          response = 'For smartphone repairs, please visit our service center and our technicians will assist you with the necessary repairs and support.';
+        } else if (msg.includes('screen') || msg.includes('display')) {
+          response = 'If you have a cracked or damaged screen, our service center can replace it with a new one. Please bring your smartphone to us for screen replacement services.';
+        } else if (msg.includes('battery') || msg.includes('charging')) {
+          response = 'If you are experiencing battery or charging issues, our technicians can diagnose the problem and provide battery replacement or charging port repair services.';
+        } else if (msg.includes('water') || msg.includes('liquid')) {
+          response = 'If your smartphone has come into contact with water or any liquid, we recommend turning it off immediately and bringing it to our service center for water damage repair.';
+        } else if (msg.includes('software') || msg.includes('update')) {
+          response = 'If you need assistance with software updates or installation of apps on your smartphone, our technicians can guide you through the process.';
+        } else if (msg.includes('camera') || msg.includes('photo')) {
+          response = 'If you are experiencing issues with the camera on your smartphone, our technicians can diagnose and repair any camera-related problems.';
+        } else if (msg.includes('network') || msg.includes('signal')) {
+          response = 'If you are facing network or signal issues on your smartphone, our technicians can troubleshoot and help resolve the problem.';
+        } else if (msg.includes('memory') || msg.includes('storage')) {
+          response = 'If you need assistance with expanding or managing the memory or storage on your smartphone, our experts can provide the necessary guidance.';
+        } else if (msg.includes('speaker') || msg.includes('audio')) {
+          response = 'If you are experiencing issues with the speaker or audio on your smartphone, our technicians can diagnose and repair the problem.';
+        } else if (msg.includes('accessories') || msg.includes('cases')) {
+          response = 'If you are looking for smartphone accessories or cases, we have a range of options available at our service center.';
+        } else {
+          response = 'For any smartphone-related queries or issues, please visit our service center and our team will be happy to assist you.';
+        }
+      } else if (msg.includes('TV') || msg.includes('television')) {
+        if (msg.includes('repair') || msg.includes('fix')) {
+          response = 'If you are facing issues with your TV, we recommend bringing it to our service center for professional diagnosis and repair.';
+        } else if (msg.includes('picture') || msg.includes('display')) {
+          response = 'If you are experiencing problems with the picture quality or display of your TV, our technicians can inspect and repair it accordingly.';
+        } else if (msg.includes('sound') || msg.includes('audio')) {
+          response = 'If there are issues with the sound or audio of your TV, our experts can troubleshoot the problem and perform necessary repairs.';
+        } else if (msg.includes('remote') || msg.includes('control')) {
+          response = 'If you need a replacement remote control for your TV or assistance with programming a universal remote, our service center can provide the necessary support.';
+        } else if (msg.includes('channels') || msg.includes('tuning')) {
+          response = 'If you need help with channel tuning or setting up cable/satellite connections for your TV, our technicians can assist you with the process.';
+        } else if (msg.includes('power') || msg.includes('turn on')) {
+          response = 'If your TV is not powering on or experiencing power-related issues, our technicians can diagnose and repair the problem.';
+        } else if (msg.includes('network') || msg.includes('internet')) {
+          response = 'If you are experiencing network or internet connectivity issues on your TV, our technicians can help diagnose and resolve the problem.';
+        } else if (msg.includes('mount') || msg.includes('wall')) {
+          response = 'If you need assistance with TV mounting or wall installation, our service center can provide professional mounting services.';
+        } else if (msg.includes('cables') || msg.includes('connections')) {
+          response = 'If you need help with cable connections or HDMI setup for your TV, our technicians can assist you with the necessary connections.';
+        } else if (msg.includes('software') || msg.includes('firmware')) {
+          response = 'If you need assistance with software updates or firmware upgrades for your TV, our experts can guide you through the process.';
+        } else {
+          response = 'For any TV-related queries or issues, please bring your television to our service center for assistance.';
+        }
+      } else if (msg.includes('computer') || msg.includes('PC')) {
+        if (msg.includes('repair') || msg.includes('fix')) {
+          response = 'For computer or PC repairs, you can bring your device to our service center and our skilled technicians will provide the required assistance.';
+        } else if (msg.includes('performance') || msg.includes('speed')) {
+          response = 'If your computer is running slow or facing performance issues, our experts can diagnose and optimize its performance for you.';
+        } else if (msg.includes('virus') || msg.includes('malware')) {
+          response = 'If you suspect your computer has a virus or malware, our technicians can perform a thorough scan and remove any malicious software.';
+        } else if (msg.includes('data') || msg.includes('recovery')) {
+          response = 'If you need data recovery services for your computer or retrieval of lost files, our service center can assist you in recovering your important data.';
+        } else if (msg.includes('network') || msg.includes('internet')) {
+          response = 'If you are experiencing network or internet connectivity issues on your computer, our technicians can help diagnose and resolve the problem.';
+        } else if (msg.includes('software') || msg.includes('installation')) {
+          response = 'If you need assistance with software installation or troubleshooting software-related issues on your computer, our experts can provide the necessary support.';
+        } else if (msg.includes('hardware') || msg.includes('upgrade')) {
+          response = 'If you are looking to upgrade the hardware components of your computer, such as RAM or storage, our service center can provide the necessary upgrades.';
+        } else if (msg.includes('monitor') || msg.includes('display')) {
+          response = 'If you are facing issues with your computer monitor or display, our technicians can inspect and repair the problem.';
+        } else if (msg.includes('keyboard') || msg.includes('mouse')) {
+          response = 'If you need replacement keyboards or mice for your computer, we have a range of options available at our service center.';
+        } else if (msg.includes('printing') || msg.includes('printer')) {
+          response = 'If you are facing issues with printing or need assistance with printer setup on your computer, our technicians can provide the necessary support.';
+        } else {
+          response = 'For any computer-related queries or issues, please visit our service center and our team will be ready to help.';
+        }
+      } else {
+        response = 'Thank you for your message. One of our representatives will get back to you shortly.';
+      }
+  
+      generate_message(response, 'user');
+    }
+    
+    function generate_message(msg, type) {
+      INDEX++;
+      var str = "";
+      str += "<div id='cm-msg-"+INDEX+"' class=\"chat-msg "+type+"\">";
+      str += "  <div class=\"cm-msg-text\">";
+      str += msg;
+      str += "  </div>";
+      str += "</div>";
+      $(".chat-logs").append(str);
+      $("#cm-msg-"+INDEX).hide().fadeIn(300);
+      if (type == 'self'){
+        $("#chat-input").val(''); 
+      }    
+      $(".chat-logs").stop().animate({ scrollTop: $(".chat-logs")[0].scrollHeight }, 1000);    
+    }
+    
+    $(document).delegate(".chat-btn", "click", function() {
+      var value = $(this).attr("chat-value");
+      var name = $(this).html();
+      $("#chat-input").attr("disabled", false);
+      generate_message(name, 'self');
+    });
+    
+    $("#chat-circle").click(function() {    
+      $("#chat-circle").toggle('scale');
+      $(".chat-box").toggle('scale');
+    });
+    
+    $(".chat-box-toggle").click(function() {
+      $("#chat-circle").toggle('scale');
+      $(".chat-box").toggle('scale');
+    });
+  });
+  
+</script>
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Word Checker</title>
+  <script>
+    async function checkWords() {
+      var userInput = document.getElementById("userInput").value;
+      var words = userInput.split(" ");
+
+      var incorrectWords = [];
+      for (var i = 0; i < words.length; i++) {
+        if (!await isWordCorrect(words[i])) {
+          incorrectWords.push(words[i]);
+        }
+      }
+
+      if (incorrectWords.length > 0) {
+        alert("Incorrect words found: " + incorrectWords.join(", "));
+      } else {
+        alert("All words are correct!");
+      }
+    }
+
+    async function isWordCorrect(word) {
+      var response = await fetch("https://api.example.com/validate?word=" + word);
+      var data = await response.json();
+      return data.valid;
+    }
+  </script>
+</head>
+<body>
+  <h1>Word Checker</h1>
+  <textarea id="userInput" rows="5" cols="50"></textarea>
+  <br>
+  <button onclick="checkWords()">Check</button>
+</body>
+</html>

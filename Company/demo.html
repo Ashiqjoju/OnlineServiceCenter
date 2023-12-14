@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computer Repair</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <style>
+    /* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+.sub-header {
+  background-color: #f4f4f4;
+  padding: 20px;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-content {
+  flex: 1;
+}
+
+.right-icons ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.right-icons ul li {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.right-icons ul li:first-child {
+  margin-left: 0;
+}
+
+.right-icons ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Background Header */
+.background-header {
+  background-color: #333;
+  padding: 20px;
+  color: #fff;
+}
+
+.header-area {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-end; /* Align the nav items to the right */
+}
+
+
+.nav li {
+  margin-left: 20px;
+}
+
+.logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 800;
+  margin-right: 20px;
+}
+
+.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav li {
+  margin-left: 20px;
+}
+
+.nav li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nav li a:hover {
+  text-decoration: underline;
+}
+
+/* Services */
+.section-heading {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.services {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.service-item {
+  text-align: center;
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.service-item img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.service-item h3 {
+  margin-top: 0;
+}
+
+.main-button-red a {
+  color: #fff;
+  background-color: #0575E6;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+/* Testimonials */
+.section-testimonials {
+  background-color: #f4f4f4;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.testimonial {
+  display: inline-block;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.testimonial img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.customer-name {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Contact Us */
+.section-contact {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.contact-form input[type="submit"] {
+  color: #fff;
+  background-color: #0575E6;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+/* Chat Box */
+.chat-box {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.chat-box img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sub-menu {
+  display: none;
+}
+
+.active .sub-menu {
+  display: block;
+}
+
+/* Computer Repair Page */
+.computer-repair {
+  background-color: #f4f4f4;
+  padding: 40px 0;
+}
+
+.computer-repair-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.computer-repair-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.computer-repair-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.computer-repair-details {
+  flex: 1;
+  margin-left: 40px;
+}
+
+.computer-repair-details h2 {
+  margin-top: 0;
+}
+
+.computer-repair-details p {
+  margin-bottom: 20px;
+}
+
+.computer-repair-details .main-button-red a {
+  margin-top: 10px;
+}
+
+</style>
+</head>
+
+<body>
+  <header class="sub-header">
+    <div class="left-content">
+      <p>Welcome to our service center. We provide quality services for your devices.</p>
+    </div>
+    <div class="right-icons">
+      <ul>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="background-header">
+    <div class="header-area">
+      <div class="logo">Service Center</div>
+      <nav class="main-nav clearfix">
+        
+        <div class="menu-trigger"></div>
+        <ul class="nav">
+          <li><a href="index.html" >Home</a></li>
+            <li><a href="computer.html" style="color:#0575E6">Computers</a></li>
+            <li><a href="smartphone.html">Smartphones</a></li>
+            <li><a href="telivison.html" >TVs</a></li>
+            <li><a href="#">Downloads</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <section class="computer-repair">
+    <div class="computer-repair-heading">
+      <h2>Computer Repair</h2>
+      <p>We provide comprehensive computer repair services to keep your system running smoothly.</p>
+    </div>
+
+    <div class="computer-repair-content">
+ 
+      <section class="developers-section" style="background-color: #fff;">
+
+        <div class="container app">
+          <div class="row app-one">
+            <div class="col-sm-4 side">
+              <div class="side-one">
+                <div class="row heading">
+                  <div class="col-sm-3 col-xs-3 heading-avatar">
+                    <div class="heading-avatar-icon">
+                      <img src="https://bootdey.com/img/Content/avatar/avatar1.png">
+                    </div>
+                  </div>
+                  <div class="col-sm-1 col-xs-1  heading-dot  pull-right">
+                    <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true"></i>
+                  </div>
+                  <div class="col-sm-2 col-xs-2 heading-compose  pull-right">
+                    <i class="fa fa-comments fa-2x  pull-right" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="row searchBox">
+                  <div class="col-sm-12 searchBox-inner">
+                    <div class="form-group has-feedback">
+                      <input id="searchText" type="text" class="form-control" name="searchText" placeholder="Search">
+                      <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="row sideBar">
+  
+                  <div id="usersContainer"></div>
+  
+                </div>
+              </div>
+            </div>
+  
+  
+  
+            <div class="col-sm-8 conversation" id="convo">
+  
+              <div class="row heading">
+                <div class="col-sm-2 col-md-1 col-xs-3 heading-avatar">
+                  <div class="heading-avatar-icon">
+                    <img src="" id="imgg">
+                  </div>
+                </div>
+                <div class="col-sm-8 col-xs-7 heading-name">
+                  <a class="heading-name-meta" id="selectedUserName">
+                  </a>
+                  <span class="heading-online" id="userStatus">Online</span>
+                </div>
+                <div class="col-sm-1 col-xs-1  heading-dot pull-right">
+                  <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true"></i>
+                </div>
+              </div>
+  
+  
+  
+              <div class="row message" id="conversation">
+                <!-- Messages will be dynamically added here -->
+              </div>
+  
+              <div class="row reply">
+                <div class="col-sm-1 col-xs-1 reply-emojis">
+                  <i class="fa fa-smile-o fa-2x"></i>
+                </div>
+                <div class="col-sm-9 col-xs-9 reply-main">
+                  <input id="incoming_id" type="text" hidden>
+                  <textarea id="message-input" class="form-control" rows="1" id="comment"></textarea>
+                </div>
+                <div class="col-sm-1 col-xs-1 reply-recording">
+                  <i class="fa fa-microphone fa-2x" aria-hidden="true"></i>
+                </div>
+                <div class="col-sm-1 col-xs-1 reply-send">
+                  <i class="fa fa-send fa-2x" onclick="sendMessage()" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+  
+           
+   </div>
+   
+  
+        </div>
+        <script src="get_users.js"></script>
+  
+        <script type="text/javascript">
+          $(function() {
+            $(".heading-compose").click(function() {
+              $(".side-two").css({
+                "left": "0"
+              });
+            });
+  
+            $(".newMessage-back").click(function() {
+              $(".side-two").css({
+                "left": "-100%"
+              });
+            });
+          })
+  
+  
+          var userMessages = document.getElementById('conversation');
+  
+  
+          function sendMessage() {
+            var message = document.getElementById("message-input").value;
+            var incoming_id = document.getElementById('incoming_id').value;
+            if (message.trim() === "") {
+              return;
+            }
+  
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "insert-chat.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  
+            xhr.onload = function() {
+              if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                  // Display the message in the chat body
+                  var messageContainer = document.createElement("div");
+                  messageContainer.className = "row message-body";
+                  var messageContent = document.createElement("div");
+                  messageContent.className = "col-sm-12 message-main-sender";
+                  var senderDiv = document.createElement("div");
+                  senderDiv.className = "sender";
+                  var messageText = document.createElement("div");
+                  messageText.className = "message-text";
+                  messageText.innerText = message;
+                  var messageTime = document.createElement("span");
+                  messageTime.className = "message-time pull-right";
+                  senderDiv.appendChild(messageText);
+                  senderDiv.appendChild(messageTime);
+                  messageContent.appendChild(senderDiv);
+                  messageContainer.appendChild(messageContent);
+                  document.getElementById("conversation").appendChild(messageContainer);
+                  document.getElementById("message-input").value = "";
+                  scrollToBottom();
+                }
+              }
+            };
+  
+            var data = "message=" + encodeURIComponent(message) + "&incoming_id=" + encodeURIComponent(incoming_id);
+            xhr.send(data);
+          }
+  
+          function scrollToBottom() {
+            userMessages.scrollTop = userMessages.scrollHeight;
+          }
+        </script>
+  
+  
+        
+      </section>
+        <div class="computer-repair-details">
+          <h2>Professional Computer Repair Services</h2>
+          <p>Our team of experienced technicians can handle all types of computer repair, whether it's a hardware issue, software problem, or virus removal. We offer quick turnaround times and affordable prices.</p>
+          <p>Contact us today to get your computer repaired!</p>
+          <div class="main-button-red"><a href="#">Contact Us</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2023 Service Center. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
